@@ -1,7 +1,10 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import {StatusBar, useColorScheme} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+
+import MainNavigator from './navigators/MainNavigator';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -11,12 +14,13 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <NavigationContainer>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-    </SafeAreaView>
+      <MainNavigator />
+    </NavigationContainer>
   );
 }
 
