@@ -13,7 +13,9 @@
   "dependencies": {
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
+    "i18next": "^23.7.16",
     "react": "18.2.0",
+    "react-i18next": "^14.0.0",
     "react-native": "0.73.1",
     "react-native-gesture-handler": "^2.14.0",
     "react-native-reanimated": "^3.6.1",

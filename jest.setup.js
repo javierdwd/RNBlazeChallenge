@@ -16,3 +16,16 @@ jest.mock('react-native-reanimated', () => {
 
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+
+// Mock i18n things
+jest.mock('react-native', () => {
+  const RN = jest.requireActual('react-native');
+
+  RN.NativeModules.SettingsManager = {
+    settings: {
+      AppleLocale: 'en-US',
+      AppleLanguages: ['fr-FR', 'en-US'],
+    },
+  };
+  return RN;
+});

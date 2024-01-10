@@ -4,7 +4,9 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-import MainNavigator from './navigators/MainNavigator';
+import '../i18n';
+
+import MainNavigator from '../Navigators/MainNavigator';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
