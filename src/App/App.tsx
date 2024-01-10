@@ -6,6 +6,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import '../i18n';
 
+import {ErrorBoundary} from './ErrorBoundary';
 import MainNavigator from '../Navigators/MainNavigator';
 import {AppContextProvider} from './AppContext';
 
@@ -23,7 +24,11 @@ function App(): React.JSX.Element {
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={backgroundStyle.backgroundColor}
         />
-        <MainNavigator />
+
+        {/* ErrorBoundary and AppContent */}
+        <ErrorBoundary>
+          <MainNavigator />
+        </ErrorBoundary>
       </AppContextProvider>
     </NavigationContainer>
   );
