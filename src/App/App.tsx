@@ -7,6 +7,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import '../i18n';
 
 import MainNavigator from '../Navigators/MainNavigator';
+import {AppContextProvider} from './AppContext';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -17,11 +18,13 @@ function App(): React.JSX.Element {
 
   return (
     <NavigationContainer>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <MainNavigator />
+      <AppContextProvider>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
+        <MainNavigator />
+      </AppContextProvider>
     </NavigationContainer>
   );
 }
