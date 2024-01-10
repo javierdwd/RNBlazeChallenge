@@ -6,4 +6,16 @@ export default {
       settings: 'Configuraciones',
     },
   },
+
+  // Dashboard
+  dashboard: {
+    title: 'Próximos partidos',
+    no_team_cta: {
+      title: 'Seleccionar equipo',
+      text: 'Por favor, dirigate a Configuración y selecciona un equipo para ver mas información',
+    },
+    no_team_cta_btn: {
+      text: 'Ir a Configuración',
+    },
+  },
 };
