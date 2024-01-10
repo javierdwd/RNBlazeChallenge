@@ -76,8 +76,7 @@ export function SearchableList(props: Props) {
     }
     return props.options.filter(
       el =>
-        innerValueKey &&
-        el.value !== innerValueKey &&
+        !(!!innerValueKey && el.value === innerValueKey) &&
         el.label.toLowerCase().includes(lowerValue),
     );
   }, [deferredInnerValue, innerValueKey, props.options]);

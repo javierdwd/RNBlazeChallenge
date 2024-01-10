@@ -23,7 +23,7 @@ type Props = NativeStackScreenProps<
 
 export function SettingsScreen(props: Props) {
   const {t} = useTranslation();
-  const {dispatch} = useApp();
+  const {state, dispatch} = useApp();
 
   const handleChangeTeam = (teamOption: {value: string; label: string}) => {
     dispatch({
@@ -51,6 +51,7 @@ export function SettingsScreen(props: Props) {
         placeholder={t('settings.choose')}
         onChange={handleChangeTeam}
         options={teams}
+        defaultSelected={state.userTeamKey}
       />
     </ScreenBox>
   );
