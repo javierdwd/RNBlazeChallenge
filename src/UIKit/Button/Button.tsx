@@ -69,11 +69,12 @@ const localStyles = StyleSheet.create({
   },
 });
 
-export function Button({variant = 'neutral', ...props}: Props) {
+export function Button({variant = 'neutral', style, ...props}: Props) {
   return (
     <TouchableOpacity
-      {...props}
-      style={[localStyles.container, localStyles[variant], props.style]}>
+      accessibilityRole="button"
+      style={[localStyles.container, localStyles[variant], style]}
+      {...props}>
       <Text style={[localStyles.text, localStyles[`${variant}Text`]]}>
         {props.text}
       </Text>
