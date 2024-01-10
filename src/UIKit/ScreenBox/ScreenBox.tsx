@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet, ScrollViewProps} from 'react-native';
+import {View, StyleSheet, ScrollViewProps} from 'react-native';
 
 const localStyles = StyleSheet.create({
   container: {
@@ -14,11 +14,9 @@ export function ScreenBox(props: ScrollViewProps) {
   const {style} = props;
 
   return (
-    <ScrollView
-      {...props}
-      contentContainerStyle={[localStyles.container, style]}>
+    <View {...props} style={[localStyles.container, style]}>
       {props.children}
-    </ScrollView>
+    </View>
   );
 }
 
