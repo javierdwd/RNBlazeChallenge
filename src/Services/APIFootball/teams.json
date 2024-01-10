@@ -1,0 +1,142 @@
+[
+  {
+    "team_key": "549",
+    "team_name": "Tigre",
+    "team_badge": "https://apiv3.apifootball.com/badges/549_tigre.jpg"
+  },
+  {
+    "team_key": "554",
+    "team_name": "River Plate",
+    "team_badge": "https://apiv3.apifootball.com/badges/554_river-plate.jpg"
+  },
+  {
+    "team_key": "563",
+    "team_name": "Racing Club",
+    "team_badge": "https://apiv3.apifootball.com/badges/563_racing-club.jpg"
+  },
+  {
+    "team_key": "568",
+    "team_name": "Defensa y Justicia",
+    "team_badge": "https://apiv3.apifootball.com/badges/568_defensa-y-justicia.jpg"
+  },
+  {
+    "team_key": "570",
+    "team_name": "Boca Juniors",
+    "team_badge": "https://apiv3.apifootball.com/badges/570_boca-juniors.jpg"
+  },
+  {
+    "team_key": "574",
+    "team_name": "San Lorenzo",
+    "team_badge": "https://apiv3.apifootball.com/badges/574_san-lorenzo.jpg"
+  },
+  {
+    "team_key": "927",
+    "team_name": "Belgrano",
+    "team_badge": "https://apiv3.apifootball.com/badges/927_belgrano.jpg"
+  },
+  {
+    "team_key": "939",
+    "team_name": "Deportivo Riestra",
+    "team_badge": "https://apiv3.apifootball.com/badges/939_deportivo-riestra.jpg"
+  },
+  {
+    "team_key": "943",
+    "team_name": "Instituto",
+    "team_badge": "https://apiv3.apifootball.com/badges/943_instituto.jpg"
+  },
+  {
+    "team_key": "945",
+    "team_name": "Barracas Central",
+    "team_badge": "https://apiv3.apifootball.com/badges/945_barracas-central.jpg"
+  },
+  {
+    "team_key": "947",
+    "team_name": "Independiente Rivadavia",
+    "team_badge": "https://apiv3.apifootball.com/badges/947_independiente-rivadavia.jpg"
+  },
+  {
+    "team_key": "989",
+    "team_name": "Estudiantes",
+    "team_badge": "https://apiv3.apifootball.com/badges/989_estudiantes.jpg"
+  },
+  {
+    "team_key": "990",
+    "team_name": "Central Córdoba SdE",
+    "team_badge": "https://apiv3.apifootball.com/badges/990_central-cordoba-sde.jpg"
+  },
+  {
+    "team_key": "991",
+    "team_name": "Banfield",
+    "team_badge": "https://apiv3.apifootball.com/badges/991_banfield.jpg"
+  },
+  {
+    "team_key": "992",
+    "team_name": "Rosario Central",
+    "team_badge": "https://apiv3.apifootball.com/badges/992_rosario-central.jpg"
+  },
+  {
+    "team_key": "994",
+    "team_name": "Godoy Cruz",
+    "team_badge": "https://apiv3.apifootball.com/badges/994_godoy-cruz.jpg"
+  },
+  {
+    "team_key": "995",
+    "team_name": "Argentinos Juniors",
+    "team_badge": "https://apiv3.apifootball.com/badges/995_argentinos-juniors.jpg"
+  },
+  {
+    "team_key": "996",
+    "team_name": "Platense",
+    "team_badge": "https://apiv3.apifootball.com/badges/996_platense.jpg"
+  },
+  {
+    "team_key": "998",
+    "team_name": "Vélez Sarsfield",
+    "team_badge": "https://apiv3.apifootball.com/badges/998_velez-sarsfield.jpg"
+  },
+  {
+    "team_key": "999",
+    "team_name": "Independiente",
+    "team_badge": "https://apiv3.apifootball.com/badges/999_independiente.jpg"
+  },
+  {
+    "team_key": "1000",
+    "team_name": "Unión",
+    "team_badge": "https://apiv3.apifootball.com/badges/1000_union.jpg"
+  },
+  {
+    "team_key": "1001",
+    "team_name": "Lanús",
+    "team_badge": "https://apiv3.apifootball.com/badges/1001_lanus.jpg"
+  },
+  {
+    "team_key": "1002",
+    "team_name": "Gimnasia La Plata",
+    "team_badge": "https://apiv3.apifootball.com/badges/1002_gimnasia-la-plata.jpg"
+  },
+  {
+    "team_key": "1003",
+    "team_name": "Talleres de Córdoba",
+    "team_badge": "https://apiv3.apifootball.com/badges/1003_talleres-de-cordoba.jpg"
+  },
+  {
+    "team_key": "1004",
+    "team_name": "Huracán",
+    "team_badge": "https://apiv3.apifootball.com/badges/1004_huracan.jpg"
+  },
+  {
+    "team_key": "1005",
+    "team_name": "Sarmiento",
+    "team_badge": "https://apiv3.apifootball.com/badges/1005_sarmiento.jpg"
+  },
+  {
+    "team_key": "1006",
+    "team_name": "Atlético Tucumán",
+    "team_badge": "https://apiv3.apifootball.com/badges/1006_atletico-tucuman.jpg"
+  },
+  {
+    "team_key": "1007",
+    "team_name": "Newell's Old Boys",
+    "team_badge": "https://apiv3.apifootball.com/badges/1007_newells-old-boys.jpg"
+  }
+]
