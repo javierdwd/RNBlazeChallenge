@@ -15,8 +15,8 @@ it('renders button correctly', async () => {
 it('call onPress correctly', async () => {
   const mockFn = jest.fn();
 
-  render(<Button testID="btn" text={'Click Me'} onPress={mockFn} />);
+  render(<Button text={'Click Me'} onPress={mockFn} />);
 
-  fireEvent.press(screen.getByTestId('btn'));
+  fireEvent.press(screen.getByRole('button'));
   expect(mockFn).toBeCalledTimes(1);
 });
