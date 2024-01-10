@@ -4,9 +4,16 @@ import type {TouchableOpacityProps} from 'react-native';
 
 import {Colors} from '../Colors';
 
+export type ButtonVariant =
+  | 'neutral'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'danger';
+
 type Props = {
   text: string;
-  variant?: 'neutral' | 'info' | 'success' | 'warning' | 'danger';
+  variant?: ButtonVariant;
 } & TouchableOpacityProps;
 
 const localStyles = StyleSheet.create({

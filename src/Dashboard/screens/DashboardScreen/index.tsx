@@ -5,21 +5,32 @@ import {useTranslation} from 'react-i18next';
 import {MainNavigatorParamList, ScreensEnum} from '../../../Navigators/types';
 import {ScreenBox, TextHeader} from '../../../UIKit';
 
-import {NoTeamCTA} from '../components/NoTeamCTA';
+import {CTAPanel} from '../../../UIKit';
+
+import {localStyles} from './styles';
 
 type Props = NativeStackScreenProps<
   MainNavigatorParamList,
   ScreensEnum.Dashboard
 >;
 
-export function DashboardScreen(_: Props) {
+export function DashboardScreen(props: Props) {
   const {t} = useTranslation();
+
+  const handleCTAPress = () => props.navigation.navigate(ScreensEnum.Settings);
 
   return (
     <ScreenBox>
       <TextHeader variant={'h1'}>{t('dashboard.title')}</TextHeader>
 
-      <NoTeamCTA />
+      <CTAPanel
+        style={localStyles.ctaNoTeam}
+        icon="SoccerBall"
+        title={t('dashboard.no_team_cta.title')}
+        text={t('dashboard.no_team_cta.text')}
+        buttonText={t('dashboard.no_team_cta_btn')}
+        onPress={handleCTAPress}
+      />
     </ScreenBox>
   );
 }

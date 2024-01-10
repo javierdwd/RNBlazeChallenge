@@ -14,8 +14,6 @@ export default {
       title: 'Seleccionar equipo',
       text: 'Por favor, dirigate a Configuración y selecciona un equipo para ver mas información',
     },
-    no_team_cta_btn: {
-      text: 'Ir a Configuración',
-    },
+    no_team_cta_btn: 'Ir a Configuración',
   },
 };

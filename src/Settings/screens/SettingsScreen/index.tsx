@@ -2,7 +2,7 @@ import React from 'react';
 import {Text} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-import {MainNavigatorParamList, ScreensEnum} from '../../Navigators/types';
+import {MainNavigatorParamList, ScreensEnum} from '../../../Navigators/types';
 
 type Props = NativeStackScreenProps<
   MainNavigatorParamList,
