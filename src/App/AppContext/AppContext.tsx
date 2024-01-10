@@ -1,20 +1,21 @@
-import React, {ReactNode} from 'react';
+import React, {ReactNode, useReducer} from 'react';
 
-import {appContextReducer, INITIAL_STATE} from './AppContextReducer';
+import {appContextReducer, APP_INITIAL_STATE} from './AppContextReducer';
 import type {AppContextState, ContextActions} from './AppContextReducer';
 
-const AppContext = React.createContext(
-  null as unknown as {
-    state: AppContextState;
-    dispatch: React.Dispatch<{
-      type: ContextActions;
-      payload?: any;
-    }>;
-  },
-);
+const AppContext = React.createContext<{
+  state: AppContextState;
+  dispatch: React.Dispatch<{
+    type: ContextActions;
+    payload?: Partial<AppContextState>;
+  }>;
+}>({
+  state: APP_INITIAL_STATE,
+  dispatch: () => {},
+});
 
 function AppContextProvider(props: {children: ReactNode}) {
-  const [state, dispatch] = React.useReducer(appContextReducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(appContextReducer, APP_INITIAL_STATE);
   const value = {state, dispatch};
 
   return (

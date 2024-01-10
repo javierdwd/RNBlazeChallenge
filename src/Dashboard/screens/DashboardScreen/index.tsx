@@ -2,12 +2,10 @@ import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useTranslation} from 'react-i18next';
 
-import {useApp, INITIAL_STATE} from '../../../App/AppContext';
+import {useApp, APP_INITIAL_STATE} from '../../../App/AppContext';
 
 import {MainNavigatorParamList, ScreensEnum} from '../../../Navigators/types';
-import {ScreenBox, TextHeader} from '../../../UIKit';
-
-import {CTAPanel} from '../../../UIKit';
+import {ScreenBox, TextHeader, CTAPanel} from '../../../UIKit';
 
 import {localStyles} from './styles';
 
@@ -27,7 +25,7 @@ export function DashboardScreen(props: Props) {
       <TextHeader variant={'h1'}>{t('dashboard.title')}</TextHeader>
 
       {/* EMPTY STATE */}
-      {state.userTeamKey === INITIAL_STATE.userTeamKey && (
+      {state.userTeamKey === APP_INITIAL_STATE.userTeamKey && (
         <CTAPanel
           style={localStyles.ctaNoTeam}
           icon="SoccerBall"
@@ -36,6 +34,10 @@ export function DashboardScreen(props: Props) {
           buttonText={t('dashboard.no_team_cta_btn')}
           onPress={handleCTAPress}
         />
+      )}
+
+      {!!state.userTeamName && (
+        <TextHeader variant="h3">{state.userTeamName}</TextHeader>
       )}
     </ScreenBox>
   );

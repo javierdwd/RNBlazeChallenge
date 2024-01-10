@@ -1,5 +1,7 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+// import {useNavigation} from '@react-navigation/native';
+import {Button} from 'react-native';
 import {useTranslation} from 'react-i18next';
 
 import type {MainNavigatorParamList} from './types';
@@ -10,6 +12,16 @@ import {SettingsScreen} from '../Settings/screens/SettingsScreen';
 
 const Stack = createNativeStackNavigator<MainNavigatorParamList>();
 
+// TODO: Typing navigation
+const ButtonRight = (navigation: any) => () =>
+  (
+    <Button
+      onPress={() => navigation.navigate(ScreensEnum.Settings)}
+      title="⚙️"
+      color="red"
+    />
+  );
+
 export function MainNavigator() {
   const {t} = useTranslation();
 
@@ -18,8 +30,13 @@ export function MainNavigator() {
       <Stack.Screen
         name={ScreensEnum.Dashboard}
         component={DashboardScreen}
-        options={{
-          title: t('screens.title.dashboard'),
+        options={({navigation}) => {
+          const withNavigation = ButtonRight(navigation);
+
+          return {
+            title: t('screens.title.dashboard'),
+            headerRight: withNavigation,
+          };
         }}
       />
       <Stack.Screen
