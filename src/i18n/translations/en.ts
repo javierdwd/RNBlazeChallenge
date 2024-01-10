@@ -16,4 +16,10 @@ export default {
     },
     no_team_cta_btn: 'Go to Settings',
   },
+
+  // Settings
+  settings: {
+    title: 'Pick a Team!',
+    choose: 'Choose a team...',
+  },
 };

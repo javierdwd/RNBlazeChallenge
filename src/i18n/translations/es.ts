@@ -16,4 +16,10 @@ export default {
     },
     no_team_cta_btn: 'Ir a Configuraciones',
   },
+
+  // Settings
+  settings: {
+    title: '¡Elije un equipo!',
+    choose: 'Elegir...',
+  },
 };
