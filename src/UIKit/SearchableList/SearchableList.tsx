@@ -7,6 +7,7 @@ import {
   StyleProp,
   ViewProps,
 } from 'react-native';
+import {useTranslation} from 'react-i18next';
 
 import {Input} from '../../UIKit';
 
@@ -40,46 +41,42 @@ function ListItem(props: ListItemProps) {
 }
 
 export function SearchableList(props: Props) {
-  const [innerValueKey, setInnerValueKey] = useState(
-    props.defaultSelected || '',
+  const {t} = useTranslation();
+
+  const [defaultOption] = useState<Option | undefined>(() =>
+    props.options.find(el => el.value === props.defaultSelected),
   );
 
-  const [innerValue, setInnerValue] = useState(() => {
-    if (!props.defaultSelected) {
-      return '';
-    }
+  const [innerLabel, setInnerLabel] = useState(
+    () => defaultOption?.label || '',
+  );
 
-    return (
-      props.options.find(el => el.value === props.defaultSelected)?.label || ''
-    );
-  });
-
-  const deferredInnerValue = useDeferredValue(innerValue);
+  const deferredInnerLabel = useDeferredValue(innerLabel);
 
   const handleChangeText = (text: string) => {
-    setInnerValue(text);
+    setInnerLabel(text);
   };
 
   const handleUserPressSelection = (option: Option) => {
-    setInnerValue(option.label);
-    setInnerValueKey(option.value);
+    setInnerLabel(option.label);
 
     props.onChange(option);
   };
 
   // Filter options by user input.
   const filteredOptions = useMemo(() => {
-    const lowerValue = deferredInnerValue.toLocaleLowerCase();
+    const lowerLabel = deferredInnerLabel.toLowerCase();
 
-    if (!lowerValue.trim()) {
+    if (!lowerLabel.trim()) {
       return props.options;
     }
+
     return props.options.filter(
       el =>
-        !(!!innerValueKey && el.value === innerValueKey) &&
-        el.label.toLowerCase().includes(lowerValue),
+        !(!!lowerLabel && el.label.toLowerCase() === lowerLabel) &&
+        el.label.toLowerCase().includes(lowerLabel),
     );
-  }, [deferredInnerValue, innerValueKey, props.options]);
+  }, [deferredInnerLabel, props.options]);
 
   const handleSubmit = () => {
     if (filteredOptions.length === 1) {
@@ -95,12 +92,19 @@ export function SearchableList(props: Props) {
         defaultValue={String(props.defaultSelected || '')}
         autoCapitalize={'words'}
         blurOnSubmit={true}
-        value={innerValue}
+        value={innerLabel}
         onSubmitEditing={handleSubmit}
         selectTextOnFocus={true}
+        clearButtonMode="while-editing"
       />
 
       <View style={localStyles.listAnchor}>
+        {!filteredOptions.length &&
+          !!defaultOption &&
+          defaultOption?.label !== innerLabel && (
+            <Text>{t('searchable_list.no_matches')}</Text>
+          )}
+
         <FlatList
           style={[localStyles.list]}
           data={filteredOptions}

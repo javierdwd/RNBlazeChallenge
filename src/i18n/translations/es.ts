@@ -22,4 +22,9 @@ export default {
     title: '¡Elije un equipo!',
     choose: 'Elegir...',
   },
+
+  // UIKit
+  searchable_list: {
+    no_matches: 'Sin coincidencias',
+  },
 };

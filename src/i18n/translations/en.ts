@@ -22,4 +22,9 @@ export default {
     title: 'Pick a Team!',
     choose: 'Choose a team...',
   },
+
+  // UIKit
+  searchable_list: {
+    no_matches: 'No matches',
+  },
 };
