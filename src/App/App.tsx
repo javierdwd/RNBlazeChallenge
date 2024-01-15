@@ -9,7 +9,7 @@ import '../i18n';
 import {ErrorBoundary} from './ErrorBoundary';
 import MainNavigator from '../Navigators/MainNavigator';
 import {AppContextProvider} from './AppContext';
-
+import {ReactQueryContextProvider} from './ReactQueryContext';
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -27,7 +27,9 @@ function App(): React.JSX.Element {
 
         {/* ErrorBoundary and AppContent */}
         <ErrorBoundary>
-          <MainNavigator />
+          <ReactQueryContextProvider>
+            <MainNavigator />
+          </ReactQueryContextProvider>
         </ErrorBoundary>
       </AppContextProvider>
     </NavigationContainer>
