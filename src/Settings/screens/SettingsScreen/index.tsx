@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useTranslation} from 'react-i18next';
 
@@ -7,14 +7,7 @@ import {MainNavigatorParamList, ScreensEnum} from '../../../Navigators/types';
 import {ScreenBox, TextHeader, SearchableList} from '../../../UIKit';
 import {useApp} from '../../../App/AppContext';
 
-import type {Team} from '../../../Services/APIFootball/types';
-
-const TeamsCollection: Team[] = require('../../../Services/APIFootball/teams.json');
-
-const teams = TeamsCollection.map(team => ({
-  label: team.team_name,
-  value: team.team_key,
-}));
+import {useGetTeams} from '../../../Services/APIFootball/queryHooks';
 
 type Props = NativeStackScreenProps<
   MainNavigatorParamList,
@@ -24,6 +17,15 @@ type Props = NativeStackScreenProps<
 export function SettingsScreen(props: Props) {
   const {t} = useTranslation();
   const {state, dispatch} = useApp();
+
+  const {data, isLoading} = useGetTeams({});
+
+  const teams = useMemo(() => {
+    return (data ?? []).map(team => ({
+      label: team.team_name,
+      value: team.team_key,
+    }));
+  }, [data]);
 
   const handleChangeTeam = (teamOption: {value: string; label: string}) => {
     dispatch({
@@ -52,6 +54,7 @@ export function SettingsScreen(props: Props) {
         onChange={handleChangeTeam}
         options={teams}
         defaultSelected={state.userTeamKey}
+        isLoading={isLoading}
       />
     </ScreenBox>
   );

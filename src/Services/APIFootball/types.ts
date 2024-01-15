@@ -9,6 +9,8 @@ export interface Team {
   coaches: Coach[];
 }
 
+export type TeamCollection = Team[];
+
 export interface Venue {
   venue_name: string;
   venue_address: string;
@@ -66,4 +68,9 @@ export interface Coach {
   coach_name: string;
   coach_country: string;
   coach_age: string;
+}
+
+// Service Declaration
+export interface APIFootballServicePort {
+  getTeams: () => Promise<Team[]>;
 }

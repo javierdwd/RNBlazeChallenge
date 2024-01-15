@@ -26,5 +26,6 @@ export default {
   // UIKit
   searchable_list: {
     no_matches: 'Sin coincidencias',
+    loading_teams: 'Cargando equipos...',
   },
 };

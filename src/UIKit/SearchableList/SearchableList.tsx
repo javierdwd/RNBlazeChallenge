@@ -23,6 +23,7 @@ type Props = {
   placeholder: string;
   options: Option[];
   defaultSelected?: string;
+  isLoading?: boolean;
   onChange: (selectedOption: Option) => void;
 };
 
@@ -84,10 +85,14 @@ export function SearchableList(props: Props) {
     }
   };
 
+  const _placeholder = props.isLoading
+    ? t('searchable_list.loading_teams')
+    : props.placeholder;
+
   return (
     <View style={[localStyles.container, props.style]}>
       <Input
-        placeholder={props.placeholder}
+        placeholder={_placeholder}
         onChangeText={handleChangeText}
         defaultValue={String(props.defaultSelected || '')}
         autoCapitalize={'words'}

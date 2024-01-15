@@ -26,5 +26,6 @@ export default {
   // UIKit
   searchable_list: {
     no_matches: 'No matches',
+    loading_teams: 'Loading teams...',
   },
 };
